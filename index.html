@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>פיליון 2026 - סיכום המלצות מהקבוצה</title>
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #51636b;
+      --line: rgba(23, 33, 43, .13);
+      --paper: #fbf7ef;
+      --sea: #1f7890;
+      --pine: #315f55;
+      --clay: #a95f3b;
+      --sun: #d99b40;
+      --foam: #e7f1ee;
+      --blue-soft: #d9eaf0;
+      --sand: #f4dfb8;
+      --white: rgba(255, 255, 255, .82);
+    }
+
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #eef3f2;
+      font-family: Arial, "Noto Sans Hebrew", "Helvetica Neue", sans-serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: #0a6680;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .hero {
+      min-height: 470px;
+      display: grid;
+      align-items: end;
+      padding: 46px;
+      color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(11, 33, 45, .18), rgba(11, 33, 45, .72)),
+        linear-gradient(145deg, #6eb7c7 0%, #2f7f8f 36%, #224f5d 37%, #26463f 59%, #d2aa65 60%, #a65d3b 100%);
+      box-shadow: 0 18px 45px rgba(23, 33, 43, .18);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 17% 0 26%;
+      background:
+        linear-gradient(145deg, transparent 0 18%, rgba(25, 67, 62, .86) 18% 50%, transparent 50%),
+        linear-gradient(220deg, transparent 0 16%, rgba(70, 111, 92, .88) 16% 54%, transparent 54%),
+        linear-gradient(145deg, transparent 0 42%, rgba(28, 74, 82, .92) 42% 72%, transparent 72%);
+      opacity: .95;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 30%;
+      background:
+        repeating-linear-gradient(180deg, rgba(255,255,255,.32) 0 1px, transparent 1px 11px),
+        linear-gradient(180deg, #2c91ab, #1d627c);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+    }
+
+    .kicker {
+      color: #9a5a35;
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+
+    .hero .kicker {
+      color: #ffd98f;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: 52px;
+      line-height: 1.04;
+    }
+
+    h2 {
+      font-size: 30px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      color: #173f52;
+      font-size: 20px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 18px 0 0;
+      font-size: 19px;
+      color: rgba(255, 255, 255, .9);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 12px 0 18px;
+      margin: 0 0 8px;
+      background: linear-gradient(180deg, #eef3f2 72%, rgba(238, 243, 242, 0));
+    }
+
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #24444c;
+      background: rgba(255, 255, 255, .7);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .72), rgba(255, 255, 255, .54)),
+        var(--paper);
+      box-shadow: 0 10px 28px rgba(23, 33, 43, .08);
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card,
+    .day,
+    .source-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 16px;
+      break-inside: avoid;
+    }
+
+    .card strong {
+      color: #173f52;
+    }
+
+    .takeaway {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .num {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--sea);
+      font-weight: 700;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 4px 0 0 5px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: #24444c;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .tag.warn {
+      color: #593715;
+      background: #f6dba8;
+    }
+
+    .tag.good {
+      color: #1f4d43;
+      background: #d5ebe1;
+    }
+
+    .note {
+      border-right: 5px solid var(--sun);
+      border-radius: 8px;
+      background: #fff2cc;
+      padding: 14px 16px;
+      margin: 14px 0;
+    }
+
+    .warning {
+      border-right-color: var(--clay);
+      background: #ffe7d7;
+    }
+
+    .day {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .date {
+      color: var(--clay);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .date span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .mini-list {
+      margin: 8px 0 0;
+      padding: 0 18px 0 0;
+    }
+
+    .mini-list li {
+      margin-bottom: 6px;
+    }
+
+    .route {
+      direction: ltr;
+      text-align: left;
+      font-size: 12px;
+      color: #0a6680;
+      overflow-wrap: anywhere;
+    }
+
+    .score {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #315f55;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .print-footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        padding: 12px;
+      }
+
+      .hero {
+        min-height: 420px;
+        padding: 28px 20px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      h2 {
+        font-size: 25px;
+      }
+
+      .cols-2,
+      .cols-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .day,
+      .takeaway {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        position: static;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .shell {
+        max-width: none;
+        padding: 0;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero,
+      .section {
+        box-shadow: none;
+        page-break-after: always;
+      }
+
+      .section:last-child {
+        page-break-after: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="kicker">סריקת קהילה · קבוצת “פיליון ויוון למשפחה המטיילת” · נבדק 29.7.2026</p>
+        <h1>פיליון סוף אוגוסט: מה הקבוצה מוסיפה למסלול שלכם</h1>
+        <p class="subtitle">סיכום פרקטי למשפחה של זוג + ארבעה ילדים, לפי התאריכים והלינות שכבר סגרתם: מזרח פיליון ב-19-24.8, מערב פיליון ב-24-28.8 ואתונה בסוף.</p>
+      </div>
+    </section>
+
+    <nav class="nav" aria-label="ניווט בדף">
+      <a href="https://www.google.com/maps/d/u/0/edit?mid=1h_zRgNWmRfWxD5WsH3Blj0TiFf8CI7g&usp=sharing">מפת Google</a>
+      <a href="#bottom-line">שורה תחתונה</a>
+      <a href="#daily">יום לפי יום</a>
+      <a href="#beaches">חופים</a>
+      <a href="#boats">סירות וים</a>
+      <a href="#food">מסעדות</a>
+      <a href="#roads">עצירות בדרך</a>
+      <a href="#checklist">בדיקות</a>
+      <a href="#sources">מקורות</a>
+    </nav>
+
+    <section id="bottom-line" class="section">
+      <p class="kicker">מה השתנה אחרי הסריקה</p>
+      <h2>המסקנות החשובות למסלול שלכם</h2>
+      <div class="note">
+        <strong>מפה לניווט רגוע:</strong>
+        כל הנקודות שאספתם מרוכזות ב-Google My Maps.
+        <a href="https://www.google.com/maps/d/u/0/edit?mid=1h_zRgNWmRfWxD5WsH3Blj0TiFf8CI7g&usp=sharing">פתחו את מפת פיליון 2026</a>.
+      </div>
+      <div class="grid cols-2">
+        <div class="card takeaway">
+          <div class="num">1</div>
+          <div>
+            <h3>החלוקה מזרח ואז מערב נכונה</h3>
+            <p>כמה סיכומי משפחות מחזקים את האינטואיציה: המזרח דרמטי ויפה יותר, המערב קל ונעים יותר לרחצה עם ילדים. טוב שאתם מסיימים במערב, כי סוף הטיול צריך להוריד הילוך.</p>
+            <span class="tag good">לא לשנות בסיס</span>
+          </div>
+        </div>
+        <div class="card takeaway">
+          <div class="num">2</div>
+          <div>
+            <h3>לא להשאיר שיט ליום האחרון</h3>
+            <p>הקבוצה מלאה המלצות על שיט, אבל גם אזהרות על ימים שבהם הרוח עולה והים משתנה. ביום עם ילדים, עדיף לשבץ מוקדם יחסית ולהשאיר חלון גיבוי.</p>
+            <span class="tag warn">החלטת בוקר לפי ים</span>
+          </div>
+        </div>
+        <div class="card takeaway">
+          <div class="num">3</div>
+          <div>
+            <h3>צורי שייך בעיקר לצד המערבי</h3>
+            <p>צורי חוזר בקבוצה כישראלי להשכרת סירות ב-Kato Gatzea, עם המלצות חזקות וגם פוסט אזהרה על שיט עצמאי בים שהתחיל רגוע והתהפך. עם בן 4, ההמלצה שלי: שיט מודרך/סקיפר או לוותר אם יש ספק.</p>
+            <span class="tag">Kato Gatzea</span><span class="tag">054-5242805</span>
+          </div>
+        </div>
+        <div class="card takeaway">
+          <div class="num">4</div>
+          <div>
+            <h3>להוסיף את Kalamaki כאופציית משפחות</h3>
+            <p>זה לא חוף מוסדר, אבל חזרו עליו כטוב לילדים בגלל בריכות סלע קטנות שמאפשרות משחק בלי פחד מגלים ועומק. זו אופציית בוקר טובה במזרח כשלא רוצים חוף גדול ועמוס.</p>
+            <span class="tag good">גיבוי מעולה למזרח</span>
+          </div>
+        </div>
+        <div class="card takeaway">
+          <div class="num">5</div>
+          <div>
+            <h3>קאלה נרה מנצחת בערב</h3>
+            <p>במערב, קאלה נרה חוזרת כמקום נוח לילדים: ים רגוע, טיילת, טברנות, חנויות וסופר. באוגוסט העיירות מתעוררות באמת בערב, כשמתקרר.</p>
+            <span class="tag">מים רגועים</span><span class="tag">טיילת</span>
+          </div>
+        </div>
+        <div class="card takeaway">
+          <div class="num">6</div>
+          <div>
+            <h3>לנסיעות צריך עוגני עצירה</h3>
+            <p>מהקבוצה עלו שוב ושוב עצירות שמקלות על ילדים: קמנה וורלה, תרמופילאי, וולוס לקניות ב-Lidl/Jumbo, ובחזור אפשרות לפצל אם כולם עייפים.</p>
+            <span class="tag">פחות “דוך”</span>
+          </div>
+        </div>
+      </div>
+      <div class="note warning">
+        <strong>תיקון חשוב למסלול המקורי:</strong> אם “יום הסירה עם צורי” נשאר בתוכנית, עדיף להעביר אותו לצד המערבי, למשל 25.8 או 26.8. אם רוצים שייט/קיאקים בצד המזרחי ב-22.8, לחפש ספקים של Fakistra / Sea Caves of Thetis שיוצאים מאזור Damouchari, Agios Ioannis או Chorefto.
+      </div>
+    </section>
+
+    <section id="daily" class="section">
+      <p class="kicker">18-30 באוגוסט</p>
+      <h2>המלצות משולבות לפי הימים שלכם</h2>
+
+      <article class="day">
+        <div class="date">ג׳ 18.8 <span>נחיתה באתונה</span></div>
+        <div>
+          <h3>יום נחיתה: לא להיכנס לקצב טיול</h3>
+          <p>הקו נשאר נכון: לינה רגועה ליד שדה התעופה או באזור נוח ליציאה צפונה. אם יש כוח לארוחה, Rafina או Artemida עדיפות על כניסה למרכז אתונה אחרי טיסה.</p>
+          <ul class="mini-list">
+            <li>להכין מראש מים, נשנושים וטעינת טלפונים לנסיעה הארוכה של מחר.</li>
+            <li>אם הרכב נאסף כבר בערב, לבדוק כסאות ילדים, תא מטען ושקע טעינה לפני שיוצאים מהחניה.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="date">ד׳ 19.8 <span>אתונה → OM Living</span></div>
+        <div>
+          <h3>יום הדרך: תרמופילאי, קמנה וורלה, וולוס</h3>
+          <p>מהקבוצה עלתה עצירה נחמדה ב-Kamena Vourla: טיילת, חופים ומסעדות, בתור הפסקה רכה בדרך צפונה. תרמופילאי נשארת עצירה קצרה וטובה יותר “תוכניתית”. וולוס מתאימה לסופר, גלידה וציוד חוף.</p>
+          <ul class="mini-list">
+            <li><strong>תרמופילאי:</strong> פסל ליאונידס ומרכז המידע, עצירה היסטורית קצרה ולא יום שלם.</li>
+            <li><strong>Kamena Vourla:</strong> טוב אם הילדים צריכים הפסקת ים/טיילת במקום עוד תחנת דלק.</li>
+            <li><strong>Volos:</strong> Lidl/Jumbo למחצלת, שמשייה, נשנושים ובקבוקי מים גדולים.</li>
+          </ul>
+          <p class="small">הערת אוגוסט: לצאת מוקדם. העלייה לפיליון מפותלת, ועדיף להגיע לאזור Agios Dimitrios באור.</p>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="date">ה׳ 20.8 <span>התאקלמות במזרח</span></div>
+        <div>
+          <h3>ים קרוב בלי לנסוע רחוק</h3>
+          <p>Papa Nero ו-Agios Ioannis טובים ליום ראשון של פיליון: לא להוכיח כלום, רק ים, ארוחת צהריים וזמן להבין את הכבישים. אם הים גלי מדי, שוטטות קצרה ב-Mouresi או Kissos עדיפה על מרדף אחרי חוף מושלם.</p>
+          <ul class="mini-list">
+            <li><strong>Plaka:</strong> חוף יפה בצד המזרחי; לפי פוסט בקבוצה, ניווט ל-Eden Hotel מוביל לירידה נוחה יותר.</li>
+            <li><strong>מפלי קיסוס:</strong> לא לנסוע במיוחד, כן לעצור אם עוברים ליד הגשר בדרך לחופים.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="date">ו׳ 21.8 <span>Tsagarada + Milopotamos</span></div>
+        <div>
+          <h3>היום האייקוני של המזרח</h3>
+          <p>Milopotamos מקבל חיזוק ברור: יפהפה, דרמטי, עם שני אזורי חוף ומעט צל טבעי. להגיע מוקדם, לקחת מעט ציוד, נעלי מים, ולבדוק את מצב הגלים לפני הירידה.</p>
+          <ul class="mini-list">
+            <li><strong>בחוף:</strong> לעבור דרך המעבר בסלע ולבחור צד לפי גלים, צל וצפיפות.</li>
+            <li><strong>אחרי הצהריים רגוע:</strong> Stream of Poros / מפלי פורוס כמסלולון קצר עם מים קרים, או כיכר Zagora לבירה/גלידה.</li>
+            <li><strong>גיבוי משפחתי:</strong> Kalamaki אם רוצים פחות “וואו” ויותר בריכות סלע לילדים.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="date">ש׳ 22.8 <span>שייט מזרח או יום חוף</span></div>
+        <div>
+          <h3>להחליט לפי הים, לא לפי הלו״ז</h3>
+          <p>אם נשארים במזרח: הכיוון הנכון הוא שייט/קיאק ל-Fakistra ו-Sea Caves of Thetis. יש מפעילים שמגדירים את מסלול Damouchari-Fakistra כמשפחתי וקל, סביב 3-3.5 שעות, אבל צריך לבדוק גיל מינימום ויכולת של הילד בן 4.</p>
+          <ul class="mini-list">
+            <li><strong>חלופה יבשתית:</strong> Damouchari לשיטוט, נמל קטן, שני חופים וטברנה על המים.</li>
+            <li><strong>לא לדחוף:</strong> אם בבוקר יש רוח, לעשות יום חוף/כפרים ולהעביר את השיט למערב.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="date">א׳ 23.8 <span>רכבת פיליון</span></div>
+        <div>
+          <h3>Ano Lechonia → Milies</h3>
+          <p>הרכבת עדיין נראית מתאימה ליום ראשון: לפי Hellenic Train, יציאה 10:00 מאנו לחוניה וחזרה 15:00 ממילייס, עם עצירה קצרה ב-Ano Gatzea. זה יום מיוחד לילדים, אבל הוא לא חייב להיות “חובה” אם כולם עייפים.</p>
+          <ul class="mini-list">
+            <li><strong>טריק מהקבוצה:</strong> גם בלי רכבת אפשר ללכת קצת על המסילה במילייס עד אזור הגשר/נוף.</li>
+            <li><strong>לוגיסטיקה:</strong> להזמין כרטיסים מראש, להגיע מוקדם לחניה, ולהביא מים ונשנושים.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="date">ב׳ 24.8 <span>מעבר למערב</span></div>
+        <div>
+          <h3>יום מעבר שהוא גם טיול קטן</h3>
+          <p>עצירה ב-Milies / Vyzitsa עדיין נכונה. אל תעשו יותר מזה: המעבר עצמו, סופר, התארגנות בבית החדש וערב ב-Kala Nera הם מספיק תוכנית.</p>
+          <ul class="mini-list">
+            <li><strong>Kato Gatzea:</strong> בסיס רגוע, קרוב למים ולציר של המערב.</li>
+            <li><strong>Kala Nera בערב:</strong> טיילת, חוף שקט, טברנות וסופר. באוגוסט האזור מתעורר סביב השקיעה.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="date">ג׳ 25.8 <span>יום מפרץ</span></div>
+        <div>
+          <h3>Kala Nera / Koropi / Afissos</h3>
+          <p>זה יום שהקבוצה ממש תומכת בו: המערב נוח, שטוח ורגוע יותר לילדים. להישאר קרוב, לבחור חוף עם צל ושירותי חוף, ולא לחפש נסיעות גדולות.</p>
+          <ul class="mini-list">
+            <li><strong>Costa Kali Beach Bar & Restaurant:</strong> עלה כהמלצה לחוף נוח עם מיטות, דשא, מסעדה והרבה צל מעצים.</li>
+            <li><strong>Olive Beach:</strong> מפרץ יפה עם מיטות ושמשיות, טוב ליום שקט.</li>
+            <li><strong>Afissos:</strong> לשמור לשקיעה וארוחת ערב, לאו דווקא לבוקר.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="date">ד׳ 26.8 <span>דרום מערב</span></div>
+        <div>
+          <h3>Horto, Milina, Tzasteni, Kottes או Trikeri</h3>
+          <p>יום יפה, אבל לבחור יעד מרכזי אחד. עם ארבעה ילדים בסוף אוגוסט, הייתי עושה Horto/Milina + Tzasteni, ורק אם יש אנרגיה ממשיכה עד Alogoporos למונית-סירה לאי Trikeri.</p>
+          <ul class="mini-list">
+            <li><strong>Tzasteni:</strong> עצירה מצולמת וקצרה, לא יום שלם.</li>
+            <li><strong>Kottes:</strong> כפר דרומי קטן; בקבוצה הומלצה שם Taverna da Angelo, עם הליכה קצרה בסוף דרך עפר.</li>
+            <li><strong>Alogoporos → Trikeri:</strong> חוויה שקטה בלי מכוניות, טברנות קטנות, מנזר והליכה קצרה לנוף. לעשות רק אם לא חם מדי.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="date">ה׳ 27.8 <span>הר + וולוס</span></div>
+        <div>
+          <h3>Makrinitsa, Portaria ואז וולוס</h3>
+          <p>יום טוב לגוון אחרי כמה ימי חוף: תצפית במקריניצה, קטע קצר בשביל הקנטאורים בפורטריה, ואז וולוס לארוחת ערב. לא להפוך את זה למסלול הליכה ארוך בחום.</p>
+          <ul class="mini-list">
+            <li><strong>Makrinitsa:</strong> Aeriko / Art Cafe מתאימים לעצירת קפה-קינוח עם נוף.</li>
+            <li><strong>Volos:</strong> עיר טובה לסיבוב אחר הצהריים, אבל חנויות מקומיות רבות נסגרות סביב 18:00; רשתות גדולות פתוחות יותר מאוחר.</li>
+            <li><strong>ארוחת ערב:</strong> לחפש tsipouradiko משפחתי או MeZen אם רוצים משהו מוכר יותר.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="date">ו׳ 28.8 <span>חזרה לאתונה</span></div>
+        <div>
+          <h3>יום נסיעה בלי פנטזיות גדולות</h3>
+          <p>בגלל שאתם עם ארבעה ילדים, ההמלצה נשארת מסלול ישיר דרך וולוס ותרמופילאי. אם לא עשיתם Kamena Vourla בהלוך, זו יכולה להיות עצירת רגליים נחמדה. דלפי יפה, אבל תהפוך את היום לכבד מאוד.</p>
+        </div>
+      </article>
+
+      <article class="day">
+        <div class="date">ש׳-א׳ 29-30.8 <span>אתונה</span></div>
+        <div>
+          <h3>אתרים בבוקר, מזגן בצהריים, פארק בערב</h3>
+          <p>באוגוסט אתונה דורשת משמעת חום: אקרופוליס מוקדם מאוד, מוזיאון האקרופוליס בצהריים, SNFCC לקראת ערב. מהקבוצה עלתה גם תחושה שאתונה פחות קלה לילדים קטנים, אז לא להעמיס מדרחובים ואתרים.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="beaches" class="section">
+      <p class="kicker">בנק חופים</p>
+      <h2>מה לבחור לפי מצב הרוח והים</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Milopotamos</h3>
+          <p>האייקון. מים יפים, סלעים, מעבר בין שני חלקי חוף וצל טבעי במקומות מסוימים. להגיע מוקדם ולבדוק גלים.</p>
+          <span class="tag">מזרח</span><span class="tag warn">מדרגות</span>
+        </div>
+        <div class="card">
+          <h3>Kalamaki</h3>
+          <p>לא מוסדר, בלי שירותי חוף, אבל בריכות הסלע שלו הופכות אותו לחוף טוב למשפחות עם ילדים קטנים.</p>
+          <span class="tag">מזרח</span><span class="tag good">בן 4</span>
+        </div>
+        <div class="card">
+          <h3>Plaka</h3>
+          <p>חוף יפהפה ומגוון. לפי המלצה בקבוצה, לניווט נוח יותר לכתוב Eden Hotel. ייתכן תשלום/מינימום שימוש במיטות או שירותי חוף.</p>
+          <span class="tag">מזרח</span>
+        </div>
+        <div class="card">
+          <h3>Damouchari</h3>
+          <p>נמל קטן, חוף, טברנות ואווירת כפר. פחות “יום בטן גב מושלם”, יותר שיטוט, אוכל ומים יפים.</p>
+          <span class="tag">מזרח</span><span class="tag">צהריים</span>
+        </div>
+        <div class="card">
+          <h3>Kala Nera</h3>
+          <p>הבחירה הנוחה במערב: מים רגועים, טיילת, חנויות, טברנות וחוף מסודר. טוב במיוחד לערב.</p>
+          <span class="tag">מערב</span><span class="tag good">רגוע</span>
+        </div>
+        <div class="card">
+          <h3>Costa Kali</h3>
+          <p>עלה בקבוצה כחוף נוח עם מיטות, דשא, מסעדה והרבה צל. מתאים ליום שמבוגרים וילדים צריכים נוחות.</p>
+          <span class="tag">מערב</span><span class="tag good">צל</span>
+        </div>
+        <div class="card">
+          <h3>Olive Beach</h3>
+          <p>מפרץ יפה עם מיטות ושמשיות. פחות “חובה”, יותר פתרון טוב ליום מפרץ רגוע.</p>
+          <span class="tag">מערב</span>
+        </div>
+        <div class="card">
+          <h3>Tzasteni</h3>
+          <p>גלויה קטנה. לעצור, לצלם, להיכנס למים אם מתאים, ולהמשיך. לא לתכנן סביבו יום שלם.</p>
+          <span class="tag">מערב דרומי</span>
+        </div>
+        <div class="card">
+          <h3>Agioi Saranta / Chorefto</h3>
+          <p>חלופה יפה במזרח אם רוצים חוף רחב יותר. לבדוק גלים ורוח, כי המזרח פחות צפוי.</p>
+          <span class="tag">מזרח</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="boats" class="section">
+      <p class="kicker">סירות, קיאקים ומערות</p>
+      <h2>איך לעשות את חוויית הים בלי לקחת סיכון מיותר</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>צורי ב-Kato Gatzea</h3>
+          <p>בקבוצה מצאתי גם המלצות חמות וגם אזהרה מפורטת. יש משפחות שהגדירו את זה כיום הכי טוב בטיול, ויש משפחה שתיארה חוויה מפחידה כשהים השתנה והשיט היה עצמאי.</p>
+          <ul class="mini-list">
+            <li>טלפון שעלה בקבוצה: 054-5242805.</li>
+            <li>עלות שעלתה בפוסט: סביב 150 יורו + כ-50 יורו דלק, לוודא מולו כי זה עשוי להשתנות.</li>
+            <li>לשאול במפורש: מי מחזיר סירה במקרה בעיה, האם יש GPS, ציוד הצלה, תחזית רוח, ומה קורה אם ילד נבהל.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Sea Caves of Thetis / Fakistra</h3>
+          <p>למזרח פיליון, זה הכיוון הטבעי יותר: קיאק או שייט סביב Damouchari-Fakistra ומערות הים. מקורות פתוחים מציינים מסלול קיאק משפחתי של כ-3 עד 3.5 שעות, אבל צריך לבדוק התאמה לילד בן 4.</p>
+          <ul class="mini-list">
+            <li>טוב לשבץ ב-22.8 רק אם הים רגוע.</li>
+            <li>אם יש ספק, Damouchari ברגל + חוף קרוב ייתנו יום יפה בלי סיכון.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note warning">
+        <strong>כלל החלטה:</strong> בבוקר השיט שואלים על רוח, גלים והאם יצאו ילדים קטנים באותו יום. אם התשובות מעורפלות, עוברים לתוכנית חוף. חוויה מיוחדת לא שווה יום של לחץ.
+      </div>
+    </section>
+
+    <section id="food" class="section">
+      <p class="kicker">אוכל</p>
+      <h2>מסעדות וטברנות לשמור במפה</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Galeos Tavern</h3>
+          <p>ב-Agios Ioannis. עלתה בפוסט משפחתי כאחת המסעדות הטובות באזור המזרחי. נוח במיוחד אם עושים יום קרוב ל-Papa Nero / Agios Ioannis.</p>
+          <span class="tag">מזרח</span>
+        </div>
+        <div class="card">
+          <h3>Alekas</h3>
+          <p>ב-Tsagarada, ליד אזור הכיכר. הומלצה כאוכל מוקפד וחומרי גלם טובים. מתאימה ביום Milopotamos / Tsagarada.</p>
+          <span class="tag">מזרח</span>
+        </div>
+        <div class="card">
+          <h3>Aggelika Fish Taverna</h3>
+          <p>באזור Tsagarada. מופיעה גבוה במקורות אוכל פתוחים למסעדות נוף/דגים בפיליון. טובה כרעיון אם רוצים דגים ולא רק טברנה בסיסית.</p>
+          <span class="tag">מזרח</span>
+        </div>
+        <div class="card">
+          <h3>Taverna Rodia</h3>
+          <p>בקאלה נרה, תחת גפנים ומול הים. עלתה בפוסט משפחתי כהמלצה ברורה, ומתאימה בדיוק ליום המפרץ שלכם.</p>
+          <span class="tag">מערב</span><span class="tag good">עם ילדים</span>
+        </div>
+        <div class="card">
+          <h3>1900</h3>
+          <p>בטיילת של Kala Nera. מתאים לערב קליל אחרי ים, כשלא רוצים לנסוע.</p>
+          <span class="tag">מערב</span>
+        </div>
+        <div class="card">
+          <h3>Taverna da Angelo</h3>
+          <p>באזור Kottes בדרום מערב. עלתה כהמלצת דגים חזקה, עם הגעה קצת הרפתקנית: נסיעה עד סוף הדרך והליכה קצרה.</p>
+          <span class="tag">דרום מערב</span><span class="tag warn">רק אם יש כוח</span>
+        </div>
+        <div class="card">
+          <h3>MeZen / Tsipouradiko בוולוס</h3>
+          <p>וולוס ידועה בתרבות ציפוראדיקו ומנות קטנות ליד ציפורו. MeZen הוא שם מוכר ומדורג, אבל עם ילדים אפשר לבחור מקום רגוע על הטיילת ולא להינעל.</p>
+          <span class="tag">וולוס</span>
+        </div>
+        <div class="card">
+          <h3>Aeriko / Art Cafe</h3>
+          <p>ב-Makrinitsa. לא בהכרח ארוחת ערב, כן קפה/קינוח עם תצפית טובה על וולוס והמפרץ.</p>
+          <span class="tag">תצפית</span>
+        </div>
+        <div class="card">
+          <h3>Palia Damouchari</h3>
+          <p>מסעדת חוף ותיקה בדמוחארי. מתאימה אם הופכים את Damouchari לעצירת צהריים איטית.</p>
+          <span class="tag">מזרח</span>
+        </div>
+      </div>
+      <p class="print-footer">כל מסעדה כאן היא “לשמור במפה”, לא הזמנה עיוורת: בסוף אוגוסט כדאי לבדוק שעות, עומס, תפריט לילדים והאם צריך להזמין.</p>
+    </section>
+
+    <section id="roads" class="section">
+      <p class="kicker">נסיעות ועצירות</p>
+      <h2>איך לרכך את הכבישים עם ילדים</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>אתונה → פיליון</h3>
+          <ul class="mini-list">
+            <li><strong>Thermopylae:</strong> עצירה קצרה עם ערך סיפורי. לא להפוך למוזיאון ארוך אם חם.</li>
+            <li><strong>Kamena Vourla:</strong> טיילת וחוף, טוב אם צריך הפסקה אנושית באמצע הדרך.</li>
+            <li><strong>Volos:</strong> קניות, גלידה, דלק, שירותים וחזרה לרכב עם יותר סבלנות.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>בתוך פיליון</h3>
+          <ul class="mini-list">
+            <li><strong>מזרח:</strong> נסיעות קצרות במפה יכולות להרגיש ארוכות. עדיף לקבץ חוף + כפר קרוב.</li>
+            <li><strong>מערב:</strong> קל יותר לעבור בין חופים, ולכן מתאים לימים עם פחות תכנון.</li>
+            <li><strong>דרום מערב:</strong> יפה מאוד, אבל להחליט מראש איפה עוצרים ולא לרדוף אחרי כל מפרץ.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="checklist" class="section">
+      <p class="kicker">לסגור לפני הטיסה</p>
+      <h2>בדיקות אחרונות לשבוע שלפני 18.8</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>ים ושיט</h3>
+          <ul class="mini-list">
+            <li>לסגור ספק שיט רק עם מדיניות ביטול/דחייה ברורה בגלל רוח וגלים.</li>
+            <li>אם בוחרים בצורי: לשאול אם אפשר שיט עם סקיפר ולא השכרה עצמית.</li>
+            <li>להביא שקית יבשה, כובעים, חולצות ים, מים ונשנושים שאפשר לאכול בידיים.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>לוגיסטיקה</h3>
+          <ul class="mini-list">
+            <li>רכבת פיליון ל-23.8: לוודא כרטיסים, נקודת יציאה וחניה באנו לחוניה.</li>
+            <li>אקרופוליס ל-29.8: להזמין לשעה מוקדמת ולהכין תוכנית צהריים ממוזגת.</li>
+            <li>מסעדות פופולריות: לשמור מראש במפה ולבדוק שעות, במיוחד בעיירות קטנות.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources" class="section">
+      <p class="kicker">מקורות</p>
+      <h2>מה נסרק ומה אומת</h2>
+      <div class="grid cols-2">
+        <div class="source-card">
+          <h3>קבוצת פייסבוק</h3>
+          <p>“פיליון ויוון למשפחה המטיילת” - נסרקו חיפושים פנימיים לפי צורי, מילופוטמוס, קלאמקי, טברנה, מסעדות, דמוחארי, מקריניצה. הסיכום בדף הוא פרפרזה והצלבה, לא העתקת פוסטים.</p>
+          <p class="route">https://www.facebook.com/groups/858922920953565/</p>
+        </div>
+        <div class="source-card">
+          <h3>לו״ז ואטרקציות</h3>
+          <p class="route">https://www.hellenictrain.gr/en/mythical-route</p>
+          <p class="route">https://www.shakayak.gr/guided-kayak-safaris-pelion</p>
+          <p class="route">https://pelionscout.com/daily-experiences/boat-trip-sea-caves-thetis/</p>
+        </div>
+        <div class="source-card">
+          <h3>יעדים וכפרים</h3>
+          <p class="route">https://www.pelion.co.il/villages.html</p>
+          <p class="route">https://www.pelion.co.il/top20.html</p>
+          <p class="route">https://www.pelion.co.il/hiking_trails.html</p>
+          <p class="route">https://www.greece-islands.co.il/pages/kala_nera.html</p>
+        </div>
+        <div class="source-card">
+          <h3>אוכל</h3>
+          <p class="route">https://www.tripadvisor.com/Restaurants-g5549429-zfp43-Pelion_Magnesia_Region_Thessaly.html</p>
+          <p class="route">https://www.travel.gr/en/food-and-drink-en/7-restaurants-and-taverns-in-pelion-honouring-the-authentic-local-cuisine/</p>
+          <p class="route">https://pelion-damouchari.com/restaurant/</p>
+          <p class="route">https://www.tavernamag.com/food-and-wine/in-the-city-of-volos-meze-and-tsipouro-are-kings/</p>
+        </div>
+      </div>
+      <div class="note">
+        <strong>עדכון מידע:</strong> הדף משקף סריקה ב-29.7.2026. שבוע לפני הטיסה כדאי לרענן: ים/רוח, זמינות רכבת, שעות מסעדות, מחירי סירות ושעות האתרים באתונה.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
